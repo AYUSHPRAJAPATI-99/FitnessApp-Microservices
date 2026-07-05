@@ -1,4 +1,4 @@
-# Fitness Microservices
+# FitnessApp- Microservices
 
 This repository contains a full-stack fitness application built as a set of Spring Boot microservices with a React frontend.
 
