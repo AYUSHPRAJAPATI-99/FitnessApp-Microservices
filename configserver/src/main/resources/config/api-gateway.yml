@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            # lb:// means Load Balancer. # - -> element of list (lb->loadbalancer)
+            # Instead of hardcoding host:port, Gateway uses the service name
+            # registered in Eureka.
+            - id: user-service
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/users/**
+
+            - id: activity-service
+              uri: lb://ACTIVITY-SERVICE
+              predicates:
+                - Path=/api/activities/**
+
+            - id: ai-service
+              uri: lb://AI-SERVICE
+              predicates:
+                - Path=/api/recommendations/**
+
+# Uncomment, when JWT validation through Keycloak is required.
+# security:
+#   oauth2:
+#     resourceserver:
+#       jwt:
+#         jwk-set-uri: http://127.0.0.1:8181/realms/fitnessApp/protocol/openid-connect/certs
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+# Main GateWay url
+server:
+  port: 8080

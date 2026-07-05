@@ -1,0 +1,123 @@
+.register-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+     linear-gradient(
+      rgba(152, 215, 236, 0.35),
+      rgba(140, 202, 223, 0.35)
+    ),
+    url("../assets/images/login-bg-overlay.png");
+  background-size: cover;
+  background-position: center center;
+  
+  padding: 20px;
+}
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+  margin-right : 15%;
+}
+.register-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  /* make sure text inside the white card is dark for readability */
+  color: var(--dark);
+}
+.register-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.brand-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: rgb(70, 91, 227);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.register-header h1 {
+  font-size: 28px;
+  margin-top: 0px;
+  color: #0a0a0a;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+.form-group input {
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  
+  color: var(--dark);
+  background: #ffffff;
+}
+.form-group input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(78, 168, 255, 0.1);
+}
+.tab-button {
+  border: 1px solid transparent;
+  background: #60a5fa;
+  color: white;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.tab-button:hover {
+  transform: translateY(-1px);
+}
+.tab-button.active {
+  background: #1d4ed8;
+  border-color: rgba(30, 64, 175, 0.9);
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.18);
+}
+.error-message {
+  background: rgba(255, 93, 93, 0.1);
+  border: 1px solid rgba(255, 93, 93, 0.3);
+  color: var(--danger);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.register-form .form-group input {
+  color: #111; /* or var(--dark) */
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+.register-form .form-group input::placeholder {
+  color: rgba(0,0,0,0.45);
+}
+.register-form .form-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(78,168,255,0.1);
+  outline: none;
+}
