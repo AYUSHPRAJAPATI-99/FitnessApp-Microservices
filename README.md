@@ -1,4 +1,4 @@
-# FitnessApp- Microservices
+# Fitness Microservices
 
 This repository contains a full-stack fitness application built as a set of Spring Boot microservices with a React frontend.
 
@@ -80,32 +80,22 @@ A typical startup order is:
 6. `gateway`
 
 ### Run Kafka with Docker
-Start Kafka and Zookeeper using Docker Compose:
+JVM Based Apache Kafka Docker Image
 
-```yaml
-version: "3.8"
-services:
-  zookeeper:
-    image: bitnami/zookeeper:3.9
-    container_name: zookeeper
-    environment:
-      ALLOW_ANONYMOUS_LOGIN: yes
-    ports:
-      - "2181:2181"
+Docker is a popular container runtime. Docker images for the JVM based Apache Kafka can be found on Docker Hub and are available from version 3.7.0.
 
-  kafka:
-    image: bitnami/kafka:3.7
-    container_name: kafka
-    ports:
-      - "9092:9092"
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CFG_LISTENERS: PLAINTEXT://:9092
-      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-      ALLOW_PLAINTEXT_LISTENER: yes
-    depends_on:
-      - zookeeper
+Docker image can be pulled from Docker Hub using the following command:
+
+```$ docker pull apache/kafka:4.3.1```
+
+If you want to fetch the latest version of the Docker image use following command:
+
+```$ docker pull apache/kafka:latest```
+
+To start the Kafka container using this Docker image with default configs and on default port 9092:
+
+```$ docker run -p 9092:9092 apache/kafka:4.3.1```
+
 ```
 
 Run:
